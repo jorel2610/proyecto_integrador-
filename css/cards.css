@@ -39,3 +39,10 @@
 
 .btn-blue.outline { background-color: transparent; border: 1px solid var(--accent-blue); color: var(--accent-blue); }
 .btn-blue.outline:hover { background-color: var(--accent-blue); color: white; }
+
+.btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(80%);
+}

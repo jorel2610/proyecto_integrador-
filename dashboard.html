@@ -33,7 +33,6 @@
             <div class="sidebar-section">
                 <h3 class="section-title">ROL ACTIVO</h3>
                 <div class="user-profile">
-                    <div class="avatar"></div>
                     <div class="user-info">
                         <h4>Cliente IA (Ollama)</h4>
                         <span class="status online">Online</span>
@@ -75,7 +74,7 @@
         <main class="panel main-content">
             <section id="chat-box" class="chat-requisitos">
                 <p style="color: var(--text-muted); text-align: center; margin-top: 20px;">
-                    El cliente IA está esperando que aceptes un Proyecto...
+                   El cliente IA está esperando que aceptes un Proyecto...
                 </p>
             </section>
             
@@ -84,14 +83,42 @@
                     <h3>TU DECISIÓN COMO DEVELOPER</h3>
                     <p>Revisa los requisitos y decide tu siguiente acción.</p>
                 </div>
+
+                <!-- Contenedor de Búsqueda y Entrega de Archivos -->
+                <div id="file-delivery-container" class="file-delivery-container">
+                    <label class="delivery-label">ARCHIVOS DE ENTREGA</label>
+                    <div class="file-search-wrapper">
+                        <div class="search-input-container">
+                            <span class="search-icon"></span>
+                            <input type="text" id="file-search-input" placeholder="Buscar archivo del proyecto... (ej. index.html)" disabled>
+                            <div id="search-suggestions" class="search-suggestions-dropdown hidden"></div>
+                        </div>
+                        <div class="file-upload-btn-wrapper">
+                            <button class="btn-upload" id="btn-upload-trigger" type="button" disabled>
+                                Buscar archivo local...
+                            </button>
+                            <input type="file" id="real-file-input" style="display: none;">
+                        </div>
+                    </div>
+                    <div id="selected-file-badge" class="selected-file-badge hidden">
+                        <span class="file-icon"></span>
+                        <span id="selected-file-name">ninguno</span>
+                        <button id="btn-remove-file" class="remove-file-btn" type="button">✕</button>
+                    </div>
+                </div>
+
                 <div class="action-buttons">
-                    <button class="btn btn-green" id="btn-recibir">
-                        <span class="icon">✓ </span> RECIBIR PROYECTO
+                    <button class="btn btn-green" id="btn-pedir">
+                        <span class="icon"></span> PEDIR PROYECTO
                     </button>
-                    <button class="btn btn-red">
-                        <span class="icon"> X</span> RECHAZAR
+                    <button class="btn btn-green" id="btn-aceptar" disabled>
+                        <span class="icon">✓</span> ACEPTAR
                     </button>
-                    <button class="btn btn-blue outline">
+                    <button class="btn btn-red" id="btn-rechazar" disabled>
+                        <span class="icon">✗</span> RECHAZAR
+                    </button>
+
+                    <button class="btn btn-blue outline" id="btn-entregar" disabled>
                         <span class="icon">&lt;/&gt;</span> ENTREGAR
                     </button>
                 </div>
