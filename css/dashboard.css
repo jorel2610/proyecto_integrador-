@@ -392,3 +392,203 @@
     line-height: 1.4;
     margin: 0;
 }
+
+/* ==========================================
+   --- RESPONSIVE DESIGN & MEDIA QUERIES ---
+   ========================================== */
+
+/* Tablet Viewport (850px and below) */
+@media (max-width: 850px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        padding: 15px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        height: auto;
+        gap: 15px;
+    }
+
+    /* Sidebar goes horizontal */
+    .sidebar-left {
+        height: auto;
+        overflow: visible;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .sidebar-left .divider {
+        display: none;
+    }
+
+    .sidebar-section {
+        flex: 1 1 200px;
+        gap: 10px;
+    }
+
+    .difficulty-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .option-card {
+        flex: 1 1 120px;
+        padding: 10px;
+        align-items: center;
+    }
+
+    /* Main Content adjustments */
+    .main-content {
+        height: auto;
+        min-height: 550px;
+        overflow: visible;
+        padding: 20px;
+    }
+
+    .chat-requisitos {
+        height: 350px;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    .action-buttons {
+        flex-wrap: wrap;
+    }
+
+    .action-buttons .btn {
+        flex: 1 1 calc(50% - 10px);
+        min-width: 140px;
+    }
+}
+
+/* Mobile Viewport (600px and below) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .header-area {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 15px 20px;
+    }
+
+    .header-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .header-info {
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        padding-left: 0;
+        padding-top: 12px;
+        width: 100%;
+    }
+
+    .sidebar-left {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sidebar-section {
+        flex: 1 1 100%;
+    }
+
+    .difficulty-options {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .option-card {
+        flex: 1 1 auto;
+    }
+
+    .file-search-wrapper {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-upload {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-buttons .btn {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    /* Footer / Steps adjustments */
+    .footer-area {
+        padding: 15px 10px;
+    }
+
+    .step-label {
+        font-size: 10px;
+    }
+
+    .step-number {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .project-flow::before {
+        top: 14px;
+        left: 8%;
+        right: 8%;
+    }
+
+    .selected-file-badge {
+        max-width: 100%;
+    }
+    
+    #selected-file-name {
+        word-break: break-all;
+    }
+}
+
+/* Extra Small Devices (400px and below) */
+@media (max-width: 400px) {
+    .rating-summary {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .score-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .score-label {
+        min-width: unset;
+    }
+
+    .score-bar-wrapper {
+        width: 100%;
+    }
+
+    .score-value {
+        align-self: flex-end;
+    }
+}
